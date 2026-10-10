@@ -36,7 +36,7 @@ Prices: `from` is a starting price, `/hr` is hourly. Search results and link pre
 
 ## Photos
 
-Original photos live in `public/work/` and are never edited or overwritten. After adding or changing a photo, run `npm run images:prepare` and commit both `public/optimized/` and `content/responsive-images.json`. The favicon and app icons are generated from `public/logo.png` by `node scripts/prepare-favicon.mjs`.
+Original photos live in `public/work/` and are never edited or overwritten. After adding or changing a photo, run `npm run images:prepare` and commit both `public/optimized/` and `content/responsive-images.json`. The favicon and app icons are generated from the LWS badge in `assets/lws-badge.png` by `node scripts/prepare-favicon.mjs`.
 
 ## Hosting
 

@@ -2,16 +2,10 @@ import sharp from "sharp";
 import { writeFile } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 
-// The big "S" of SIGNS from the supplied logo (approved 2026-10-09), centred on black.
-// The logo itself is only read, never modified.
-const black = { r: 0, g: 0, b: 0, alpha: 1 };
-const master = await sharp(fileURLToPath(new URL("../public/logo.png", import.meta.url)))
-  .extract({ left: 0, top: 76, width: 162, height: 163 })
-  .resize(464, 464, { fit: "contain", background: black })
-  .extend({ top: 24, bottom: 24, left: 24, right: 24, background: black })
-  .flatten({ background: black })
-  .png()
-  .toBuffer();
+// The approved "LWS" badge (2026-10-10): Bookman Old Style Bold letters with the logo's chrome
+// gradient and logo-blue (#1175BC) outline on white. Kept as a finished square master so the
+// icons can be rebuilt without that font installed.
+const master = fileURLToPath(new URL("../assets/lws-badge.png", import.meta.url));
 const png = (size) => sharp(master).resize(size, size).ensureAlpha().png().toBuffer();
 
 // favicon.ico holding PNG-encoded 16/32/48px images (48px is Google's minimum for search results).
