@@ -49,3 +49,5 @@ The site runs on Vercel. Connect this repository to a Vercel project and pushing
 | `NEXT_PUBLIC_SITE_URL` | Optional. The public address; production defaults to `https://lakewestsigns.com` |
 
 Only production is indexed by search engines; preview deployments are marked `noindex` automatically. Old addresses from the previous website (`/index.php`, `/about.php`, `/vehicles.php`, `/commercial.php`, `/residential.php`, `/join.html`) redirect to the matching new pages (`next.config.ts`).
+
+Keep `public/googledfba28539fad9760.html`: it verifies ownership in Google Search Console, and Google re-checks it.
