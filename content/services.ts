@@ -108,17 +108,19 @@ export const services: Service[] = [
     id: "print",
     slug: "print-and-promo",
     name: "Print & Promotional",
-    blurb: "Business cards, brochures, flyers, yard signs, magnets and promotional products.",
+    blurb: "Business cards, brochures, flyers, banners, yard signs, magnets and promotional products.",
     homeLine: "Business cards",
     homePriceLabel: "Business cards",
     pricesHeading: "Pricing",
     prices: [
       { label: "Business cards", from: 75, note: "ask the shop to confirm quantity and specification" },
+      { label: "Banners", from: 100 },
+      { label: "Magnets", from: 45 },
     ],
     body: [
       "Print that matches your signs: business cards and brochures, flyers and postcards, holiday cards and posters, plus promotional products that keep your name in hand. We also offer creative consultations and branding help when a project needs it.",
     ],
-    why: ["Business cards (cardstock) & brochures", "Flyers & postcards", "Holiday cards", "Posters", "Yard signs", "Magnets", "Promotional products", "Creative consultations & branding"],
+    why: ["Business cards (cardstock) & brochures", "Flyers & postcards", "Holiday cards", "Posters", "Banners", "Yard signs", "Magnets", "Promotional products", "Creative consultations & branding"],
     photos: [],
   },
 ];

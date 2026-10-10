@@ -103,7 +103,7 @@ export const servicePages: Record<ServiceId, ServicePageContent> = {
     optionsHeading: "Types of print and promotional items we offer",
     options: [
       { title: "Cards & handouts", text: "Business cards, brochures, flyers, postcards and holiday cards." },
-      { title: "Posters & yard signs", text: "For a promotion or message people need to see. Have the finished size and display location ready." },
+      { title: "Posters, banners & yard signs", text: "For a promotion or message people need to see. Have the finished size and display location ready." },
       { title: "Magnets & promotional products", text: "For removable vehicle branding or an item carrying your business name. Tell us the item and quantity you have in mind." },
     ],
     steps: [

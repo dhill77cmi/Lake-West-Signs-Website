@@ -65,7 +65,7 @@ export const detailQuestions: Record<FlowService, Question[]> = {
     { name: "wording", label: "What should it say?", text: true },
   ],
   print: [
-    { name: "kind", label: "What do you need printed?", choices: [{ value: "cards", label: "Business cards" }, { value: "yard-sign", label: "Yard sign" }, { value: "flyers", label: "Flyers or brochures" }, { value: "promo", label: "Promotional items" }, { value: "other", label: "Something else" }] },
+    { name: "kind", label: "What do you need printed?", choices: [{ value: "cards", label: "Business cards" }, { value: "yard-sign", label: "Yard sign" }, { value: "flyers", label: "Flyers or brochures" }, { value: "banner", label: "Banners" }, { value: "magnet", label: "Magnets" }, { value: "promo", label: "Promotional items" }, { value: "other", label: "Something else" }] },
     { name: "quantity", label: "How many?", choices: [{ value: "<100", label: "Under 100" }, { value: "100-500", label: "100 to 500" }, { value: "500+", label: "More than 500" }, notSure] },
     artwork,
   ],

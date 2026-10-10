@@ -50,6 +50,8 @@ describe("formatPrice", () => {
       ["Trophies", "$30+"],
       ["Mugs & glasses", "$15+"],
       ["Business cards", "$75+"],
+      ["Banners", "$100+"],
+      ["Magnets", "$45+"],
     ]);
   });
 });

@@ -91,7 +91,7 @@ test("confirmed and pending prices render under their service categories", async
       await expect(row).not.toContainText(/\d/);
       await expect(row.getByRole("link")).toHaveCount(0);
     }
-    for (const [label, amount] of [["4 × 8 ft sign", "$300+"], ["On-site installation", "$85/hr"], ["Standard dock signs", "$55+"], ["Boat decals & numbers", "$25+"], ["Residential family signs", "$40+"], ["Watercraft lettering", "$55+"], ["Family dock signs", "$55+"], ["Custom dock signs", "$65+"], ["Removal & replacement", "$85/hr"], ["On-site decal service", "$85/hr"], ["Vehicle lettering", "$85+"], ["Partial wrap", "$600+"], ["Full wrap — trucks & vans", "$3,500+"], ["Name tags", "$8+"], ["Trophies", "$30+"], ["Mugs & glasses", "$15+"], ["Business cards", "$75+"]]) {
+    for (const [label, amount] of [["4 × 8 ft sign", "$300+"], ["On-site installation", "$85/hr"], ["Standard dock signs", "$55+"], ["Boat decals & numbers", "$25+"], ["Residential family signs", "$40+"], ["Watercraft lettering", "$55+"], ["Family dock signs", "$55+"], ["Custom dock signs", "$65+"], ["Removal & replacement", "$85/hr"], ["On-site decal service", "$85/hr"], ["Vehicle lettering", "$85+"], ["Partial wrap", "$600+"], ["Full wrap — trucks & vans", "$3,500+"], ["Name tags", "$8+"], ["Trophies", "$30+"], ["Mugs & glasses", "$15+"], ["Business cards", "$75+"], ["Banners", "$100+"], ["Magnets", "$45+"]]) {
       if (service.prices!.some((price) => price.label === label)) {
         const row = page.locator(".price-row").filter({ has: page.getByRole("heading", { name: label, exact: true }) });
         await expect(row.locator("p.text-title")).toHaveText(amount);
