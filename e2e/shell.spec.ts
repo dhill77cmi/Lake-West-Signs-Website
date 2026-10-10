@@ -158,6 +158,7 @@ test("large text and reduced motion preserve usable navigation", async ({ page }
   await expect(page.getByRole("banner").getByRole("link", { name: "Get a quote", exact: true })).toBeVisible();
   await trigger.click();
   await expect(page.getByRole("navigation", { name: "Mobile navigation", exact: true })).toBeVisible();
-  expect(await page.evaluate(() => getComputedStyle(document.body).backgroundColor)).toBe("rgb(255, 255, 255)");
+  // The page stays light in dark mode; on phones only the canvas behind it is dark, to match the footer.
+  expect(await page.evaluate(() => getComputedStyle(document.getElementById("main")!).backgroundColor)).toBe("rgb(255, 255, 255)");
   expect(await page.evaluate(() => document.getAnimations().length)).toBe(0);
 });
