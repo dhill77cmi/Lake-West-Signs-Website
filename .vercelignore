@@ -1,0 +1,10 @@
+# Vercel builds from source. Exclude local caches and test output.
+.next
+.next-*
+node_modules
+.git
+.npm-cache
+output
+playwright-report
+test-results
+.playwright-shots

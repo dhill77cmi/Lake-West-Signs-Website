@@ -1,0 +1,33 @@
+import { test, expect } from "@playwright/test";
+import { site } from "../content/site";
+import { pageCopy } from "../content/pages";
+
+test("about page shows the locally-owned story, building photograph and confirmed Chamber logo only", async ({ page }) => {
+  await page.emulateMedia({ reducedMotion: "reduce" });
+  await page.goto("/about");
+  const h1 = page.locator("h1");
+  await expect(h1).toHaveText(pageCopy.about.title);
+  await expect(h1).toHaveCSS("text-align", "center");
+  await expect(page.locator('[aria-label="Breadcrumb"]')).toHaveCount(0);
+  const main = page.locator("main");
+  await expect(main.getByText(new RegExp(`since ${site.founded}`))).toBeVisible();
+  await expect(main.getByText(/husband|wife|27 years/)).toHaveCount(0);
+  const photo = main.locator(".about-photo");
+  await expect(photo).toBeVisible();
+  await expect(photo).toHaveAttribute("alt", pageCopy.about.buildingLabel);
+  const tiles = main.locator(".accreditation");
+  await expect(tiles).toHaveCount(pageCopy.about.accreditations.length);
+  const membership = pageCopy.about.accreditations[0];
+  const logo = tiles.first().getByRole("img", { name: membership.logoAlt, exact: true });
+  await expect(logo).toBeVisible();
+  await expect(logo).toHaveAttribute("data-original-src", membership.logo);
+  await expect(tiles.first()).toHaveText("");
+  await expect(tiles).toHaveCount(1);
+  await expect(main.locator(".accreditation-example")).toHaveCount(0);
+  await expect(main.locator(".accreditation-mark")).toHaveCount(0);
+  await expect(main).not.toContainText(/3M Certified|International Sign Association|BBB Accredited/);
+  await expect(main.getByRole("link", { name: /^Call / })).toHaveCount(0);
+  await expect(main.getByRole("link", { name: "Get a quote", exact: true })).toHaveCount(0);
+  await expect(main.getByText(site.phone)).toHaveCount(0);
+  await expect(main.getByText(site.address.street)).toHaveCount(0);
+});

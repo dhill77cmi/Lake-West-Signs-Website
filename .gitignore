@@ -1,0 +1,69 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.npm-cache/
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/.next-e2e-production/
+/.next-e2e-preview/
+/.next-measure/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# env files (can opt-in for committing if needed)
+.env*
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# project
+tsconfig.tsbuildinfo
+.playwright-shots/
+test-results/
+playwright-report/
+output/playwright/
+.vercel
+
+.vercel
+
+# measurement and e2e harness output (Run 4) — regenerable, and the turbopack
+# caches inside exceed Vercel's 100 MB per-file upload limit
+.next-*
+.npm-cache/
+output/
+
+# raw render sources and unreferenced preview exports (regenerable, ~270 MB)
+/assets/openart/
+/assets/slideshow-review.png
+/public/design-previews/
+/public/work/*-hd.png
+/public/work/*-hd-v*.png
+.firecrawl/
